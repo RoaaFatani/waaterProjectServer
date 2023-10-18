@@ -9,9 +9,9 @@ const uri = "mongodb+srv://roaafatani:p2B0O5TZhnDxIkQ6@cluster0.wumgsif.mongodb.
 // Import user model
 // const UserRecordModel = require('./models/UserRecord')
 
-// app.get('/', (req, res) => {
-//     res.json({"users":["Roaa","Afnan","Amjad","summaya"]});
-// });
+app.get('/', (req, res) => {
+    res.json({"users":["Roaa","Afnan","Amjad","summaya"]});
+});
 
 // app.get('/usersrecord', async (req, res) => {
 //     const usersrecord = await UserRecordModel.find();
@@ -29,6 +29,6 @@ async function connect() {
 
 connect();
 
-app.listen(3000,() => {
-    console.log("Server started on port 3000")
+app.listen(3001,() => {
+    console.log("Server started on port 3001")
 });
