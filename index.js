@@ -1,10 +1,23 @@
+// Cereat server
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('<h1>i am Roaa');
+// Connect to db
+const mongoose = require("mongoose")
+mongoose.connect("mongodb+srv://roaafatani:p2B0O5TZhnDxIkQ6@cluster0.wumgsif.mongodb.net/waaterProject?retryWrites=true&w=majority")
+
+// Import user model
+const UserRecordModel = require('./models/UserRecord')
+
+// app.get('/', (req, res) => {
+//     res.json({"users":["Roaa","Afnan","Amjad","summaya"]});
+// });
+
+app.get('/usersrecord', async (req, res) => {
+    const usersrecord = await UserRecordModel.find();
+    res.json(usersrecord)
 });
 
 app.listen(3000,() => {
-    console.log('Port is listing')
+    console.log("Server started on port 3000")
 });
